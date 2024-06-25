@@ -74,7 +74,7 @@ func _physics_process(_delta):
 
 		# Smooth the movement using linear interpolation
 		var current_direction = _enemy.velocity.normalized()
-		var new_direction = current_direction.lerp(direction_to_player, smooth_factor).normalized()
+		var new_direction = current_direction.slerp(direction_to_player, smooth_factor).normalized()
 
 		# Move the enemy
 		_enemy.velocity = new_direction * _enemy.speed
